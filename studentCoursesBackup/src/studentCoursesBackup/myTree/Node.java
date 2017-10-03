@@ -58,7 +58,7 @@ public class Node implements Cloneable, SubjectI, ObserverI {
 		this.courses = courses;
 	}
 
-	public void somethingHappened() {
+	public void notifyall() {
 
 		notifyObserver();
 	}

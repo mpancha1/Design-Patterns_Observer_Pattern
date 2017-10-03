@@ -12,7 +12,9 @@ public class Driver {
 		TreeBuilder backup_tree_1 = new TreeBuilder();
 		TreeBuilder backup_tree_2 = new TreeBuilder();
 
-		FileProcessor fp = new FileProcessor("C:\\Users\\MANAV\\Desktop\\input.txt");
+		FileProcessor fp = new FileProcessor(args[0]);
+		//"C:\\Users\\MANAV\\Desktop\\input.txt"
+		//"C:\\Users\\MANAV\\Desktop\\delete.txt"
 		while ((line = fp.readLine()) != null) {
 
 			String parts[] = line.split(":");
@@ -21,12 +23,12 @@ public class Driver {
 			Node backup_Node_2 = (Node) n_origin.clone();
 			n_origin.registerObserver(backup_Node_1);
 			n_origin.registerObserver(backup_Node_2);
-			tree.insertrec(n_origin);
-			backup_tree_1.insertrec(backup_Node_1);
-			backup_tree_2.insertrec(backup_Node_2);
+			tree.insert_crc(n_origin);
+			backup_tree_1.insert_crc(backup_Node_1);
+			backup_tree_2.insert_crc(backup_Node_2);
 
 		}
-		FileProcessor fp_delete = new FileProcessor("C:\\Users\\MANAV\\Desktop\\delete.txt");
+		FileProcessor fp_delete = new FileProcessor(args[1]);
 		while ((line = fp_delete.readLine()) != null) {
 
 			String parts[] = line.split(":");
@@ -34,10 +36,10 @@ public class Driver {
 			tree.delete(n);
 
 		}
-
-		Results r1 = new Results("C:\\Users\\MANAV\\Desktop\\Fall_2017\\output1.txt");
-		Results r2 = new Results("C:\\Users\\MANAV\\Desktop\\Fall_2017\\output2.txt");
-		Results r3 = new Results("C:\\Users\\MANAV\\Desktop\\Fall_2017\\output3.txt");
+		//C:\\Users\\MANAV\\Desktop\\Fall_2017\\output1.txt
+		Results r1 = new Results(args[2]);
+		Results r2 = new Results(args[3]);
+		Results r3 = new Results(args[4]);
 
 		System.out.println("----------------------- Main--------------------------\n");
 		tree.printNodes(r1);

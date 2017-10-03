@@ -9,7 +9,7 @@ public class TreeBuilder {
 		root = null;
 	}
 
-	void insertrec(Node n) {
+	void insert_crc(Node n) {
 		root = insert(n, root);
 	}
 
@@ -44,10 +44,10 @@ public class TreeBuilder {
 	}
 
 	void delete(Node node) {
-		root = deleteRec(node, root);
+		root = delete_crc(node, root);
 	}
 
-	private Node deleteRec(Node node, Node root) {
+	private Node delete_crc(Node node, Node root) {
 		// TODO Auto-generated method stub
 
 		if (root == null) {
@@ -56,10 +56,10 @@ public class TreeBuilder {
 
 		if (node.B_num < root.B_num) {
 			// System.out.println("A");
-			root.left = deleteRec(node, root.left);
+			root.left = delete_crc(node, root.left);
 		} else if (node.B_num > root.B_num) {
 
-			root.right = deleteRec(node, root.right);
+			root.right = delete_crc(node, root.right);
 		} else if (node.B_num == root.B_num) {
 
 			// System.out.println("--"+node.courses.get(0));
@@ -68,7 +68,7 @@ public class TreeBuilder {
 
 				root.courses.remove(index);
 			}
-			root.somethingHappened();
+			root.notifyall();
 		}
 
 		return root;
@@ -76,18 +76,18 @@ public class TreeBuilder {
 	}
 
 	void printNodes(Results result) {
-		inorderRec(root, result);
+		print(root, result);
 	}
 
-	// A utility function to Tredo inorder traversal of BST
-	void inorderRec(Node root, Results results) {
+	
+	void print(Node root, Results results) {
 		if (root != null) {
-			inorderRec(root.left, results);
+			print(root.left, results);
 			results.storeNewResult(root.B_num + ":" + root.courses);
 			/*
 			 * System.out.println(root.B_num); System.out.println(root.courses);
 			 */
-			inorderRec(root.right, results);
+			print(root.right, results);
 		}
 	}
 
