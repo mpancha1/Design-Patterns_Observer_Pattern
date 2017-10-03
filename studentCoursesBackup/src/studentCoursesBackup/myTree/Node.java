@@ -1,4 +1,4 @@
-package manav_panchal_assign_2;
+package studentCoursesBackup.myTree;
 
 import java.util.ArrayList;
 
@@ -7,7 +7,7 @@ public class Node implements Cloneable, SubjectI, ObserverI {
 	private ArrayList<Object> listeners;
 	private String course;
 	public int B_num;
-	Node left, right;
+	public Node left, right;
 	public ArrayList<String> courses = new ArrayList<String>();
 
 	public Node(int b_number, String course) {

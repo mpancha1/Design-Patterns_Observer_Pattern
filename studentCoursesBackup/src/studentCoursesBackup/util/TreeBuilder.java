@@ -1,4 +1,5 @@
-package manav_panchal_assign_2;
+package studentCoursesBackup.util;
+import studentCoursesBackup.myTree.Node;
 
 public class TreeBuilder {
 
@@ -9,7 +10,7 @@ public class TreeBuilder {
 		root = null;
 	}
 
-	void insert_crc(Node n) {
+	public void insert_crc(Node n) {
 		root = insert(n, root);
 	}
 
@@ -43,7 +44,7 @@ public class TreeBuilder {
 
 	}
 
-	void delete(Node node) {
+	public void delete(Node node) {
 		root = delete_crc(node, root);
 	}
 
@@ -75,7 +76,7 @@ public class TreeBuilder {
 
 	}
 
-	void printNodes(Results result) {
+	public void printNodes(Results result) {
 		print(root, result);
 	}
 
