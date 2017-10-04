@@ -6,18 +6,17 @@ import java.io.IOException;
 
 public class Results implements FileDisplayInterface {
    
-	//private String[] results;
-	//private int i;
+	
 	private  String file_path;
 	BufferedWriter bw;
 	
 	
 	public Results(String file_path_C){
 		
-		//results = new String[100];
+		
 		file_path = file_path_C;
 		File file = new File(file_path);
-		//file.createNewFile();
+		
 		
 		try {
 			file.createNewFile();
@@ -29,7 +28,7 @@ public class Results implements FileDisplayInterface {
 			e.printStackTrace();
 		}
 		
-		//i = 0;
+		
 		
 	}
 	
@@ -39,7 +38,7 @@ public class Results implements FileDisplayInterface {
 		
 		
 		
-		System.out.println(s);
+		
 		writeToFile(s);
 		
 		
@@ -56,7 +55,7 @@ public class Results implements FileDisplayInterface {
 	public void writeToFile(String s) {
 		// TODO Auto-generated method stub
 		
-		//File file = new File("C:\\Users\\MANAV\\Desktop\\Fall 2017\\DP\\Assignments\\Assignment_1\\output_assi1.txt");
+		
 		
 		try {
 
@@ -71,7 +70,7 @@ public class Results implements FileDisplayInterface {
 				
 				bw.append(s);
 				bw.newLine();
-				//bw.close();
+				
 			} catch (IOException e) {
 				
 				// TODO Auto-generated catch block
