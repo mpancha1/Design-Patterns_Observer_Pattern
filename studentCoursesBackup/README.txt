@@ -19,7 +19,7 @@ fifth arg : path for output3.txt (backup 2)
 
 
 
---> Took reference from http://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/ to build BST.
+
 --> for observer pattern took reference from book head first java.
 
 
